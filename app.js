@@ -33,67 +33,28 @@ router.get('/cookie', function(req, res) {
 router.get('/login', function(req, res) {
   res.sendFile(path.join(__dirname + '/byeon/0724/login.html'));
 });
-
-
-/////////////////////park///////////////////////////
-router.get('/p/intro', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/01_intro.html'));
+//////////////////////////////////////////////////
+router.get('/login', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/login.html'));
 });
-router.get('/p/script', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/02_script.html'));
+router.get('/lecture', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/lecture.html'));
 });
-router.get('/p/output_display', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/03_output_display.html'));
+router.get('/lecture/detail', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/lecture_detail.html'));
 });
-router.get('/p/index', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/index.html'));
+router.get('/homework/detail', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/homework_detail.html'));
 });
-router.get('/p/sign_up', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/sign_up.html'));
-});
-router.get('/p/notice', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/notice.html'));
-});
-router.get('/p/write', function(req, res) {
-  res.sendFile(path.join(__dirname + '/park/write.html'));
-});
-router.get('/onsubmit', function(req, res) {
-  res.sendFile(path.join(__dirname + '/javascript/public/onsubmit.html'));
-});
-router.get('/p/event', function(req, res) {
-  res.sendFile(path.join(__dirname + '/javascript/park/event.html'));
-});
-router.get('/geo', function(req, res) {
-  res.sendFile(path.join(__dirname + '/javascript/public/geolocation.html'));
-});
-router.get('/cookie', function(req, res) {
-  res.sendFile(path.join(__dirname + '/javascript/public/cookies.html'));
-});
-router.get('/p/cookie', function(req, res) {
-  res.sendFile(path.join(__dirname + '/javascript/park/login_cookie.html'));
+router.get('/index', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/index.html.html'));
 });
 
-router.get('/park/sign_up', function(req, res) {
-  res.send(
-      '<br>이름 : ' + req.query.name + '<br>이메일 : ' + req.query.email +
-      '<br>비밀번호 : ' + req.query.password + '<br>비밀번호 확인 : ' +
-      req.query.re_password + '<br>생일 : ' + req.query.birthday + "<p><a href=\"/p/index\">Go to Main Page</a></p>")
-});
-router.get('/park/notice_board', function(req, res) {
+router.get('/view/login.html', function(req, res) {
   res.send(
       '<br>제목 : ' + req.query.title + '<br>작성자 : ' + req.query.writer +
-      '<br>내용 : ' + req.query.content + "<p><a href=\"/p/index\">Go to Main Page</a></p>")
+      '<br>내용 : ' + req.query.content +"<p><h1>회원정보가 존재하지않습니다</h1></p>" + "<p><a href=\"/index\">Go to Main Page</a></p>")
 });
-router.get('/login', function(req, res) {
-  res.send(
-      '<br>Name : ' + req.query.name + '<br>Password : ' + req.query.password)
-});
-router.get('/p/login', function(req, res) {
-  res.send(
-      '<br>First_Name : ' + req.query.first_name + '<br>Last_Name : ' + req.query.last_name
-      + '<br>Username : ' + req.query.username)
-});
-//////////////////////////////////////////////////
 
 
 
