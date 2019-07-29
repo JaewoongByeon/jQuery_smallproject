@@ -21,6 +21,9 @@ router.get('/lecture', function(req, res) {
 router.get('/lecture/detail', function(req, res) {
   res.sendFile(path.join(__dirname + '/view/lecture_detail.html'));
 });
+router.get('/homework', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/homework.html'));
+});
 router.get('/homework/detail', function(req, res) {
   res.sendFile(path.join(__dirname + '/view/homework_detail.html'));
 });
