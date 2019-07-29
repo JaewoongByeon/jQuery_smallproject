@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--상단 내비게이션-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="/b" class="navbar-brand">Newstudy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a href="/lecture" class="nav-link">강의</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/homework" class="nav-link">과제</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a href="/mypage" class="nav-link">마이페이지</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/customer" class="nav-link">고객지원</a>
+                </li>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="btn-group" role="group">
+                        <a href="/signup" class="btn btn-outline-dark" role="button">회원가입</a>
+                        <a href="/login" class="btn btn-outline-dark" role="button">로그인</a>
+                </form>
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <!--콘텐츠 컨테이너-->
+    <div class="container">
+        <h6>과제 상세보기</h6>
+        <h3 class="py-2 mb-0 border-bottom border-dark">Javascript Callback 예제</h3>
+        <div class="row mb-3 justify-content-between">
+            <div class="col text-left text-muted">2019-07-29 13:06</div>
+            <div class="col text-right text-muted">By JaewoongByeon</div>
+        </div>
+        <div class="border border-dark">
+            <div class="row no-gutters">
+                <div class="col bg-dark text-white">
+                    Preview
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col p-1">
+                    <img class="card-img-top" src="../public/img/main01.png" alt="thumbnail">
+                </div>
+            </div>
+            <div class="border border-dark">
+                <div class="row no-gutters">
+                    <div class="col bg-dark text-white">
+                        Code
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col p-1">
+                        <pre><code data-language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;script&gt;
+        //function 3개로 callback
+        /*
+        function execFunction(param) {
+            prefunction(param.name, callbackfunction);
+        };
+        function prefunction(param02, callback01) {
+            if (typeof callback01 == 'function') {
+                callback01(param02);
+            }
+        }
+        function callbackfunction(param01) {
+            document.getElementById("result").innerHTML = "You clicked " + param01 + "!"
+        }*/
+        //3 functions in 1 object
+        var exec = {
+            execFunction: function (param) {
+                this.prefunction(param.name, this.callbackfunction);
+            },
+            prefunction: function (param02, callback01) {
+                if (typeof callback01 == 'function') {
+                    callback01(param02);
+                }
+            },
+            callbackfunction: function (param01) {
+                document.getElementById("result").innerHTML = "You clicked " + param01 + "!"
+            }
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button onclick="exec.execFunction(this);" name="Button01"&gt;Button01&lt;/button&gt;
+    &lt;button onclick="exec.execFunction(this);" name="Button02"&gt;Button02&lt;/button&gt;
+    &lt;p id="result"&gt;&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                    </code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--하단 푸터-->
+        <div class="text-center border-top border-secondary">
+            Copyrights 2019 ⓒNewstudy, All rights Reserved.
+            <div class="row no-gutters justify-content-center">
+                <div class="col">
+                    <a href="/admin" class="text-secondary">관리자 페이지</a>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
