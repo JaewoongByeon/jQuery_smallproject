@@ -21,10 +21,8 @@
             getCookie("pwdform");
         }
         function onSubmit() {
-            if (document.login.rem.value == "on") {
                 setCookie("username", document.login.username.value, 20);
                 setCookie("password", document.login.pwd.value, 20);
-            }
         }
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
@@ -120,13 +118,7 @@
                                             <input type="password" class="form-control" placeholder="Password"
                                                 name="pwd" id="pwdform">
                                         </div>
-                                    </div>
-                                    <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" name="rem">
-                                                Remember Me
-                                            </label>
-                                        </div>                    
+                                    </div>                
                                     <button type="submit" class="col-12 btn btn-success">
                                         <span class="fas fa-unlock"></span>
                                         Login
