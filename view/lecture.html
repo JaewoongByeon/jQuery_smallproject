@@ -32,9 +32,12 @@
         <!--네비 부분 시작-->
         <!--네비 부분 끝-->
         <!--테이블 부분 시작-->
-        <div class="row col-12 mt-4 p-3">
-            <table class="table table-light table-sm table-bordered table-striped">
-                <h1 class="font-weight-bold text-warning m-2 pb-2">게시판</h1>
+
+        <div class="row mt-4 p-3">
+            <h1 class="col font-weight-bold text-warning m-2 pb-2">게시판</h1>
+        </div>
+        <div class="row">
+            <table class="col table table-light table-sm table-bordered table-striped">
                 <thead class="thead-light">
                     <tr>
                         <th>제목</th>
@@ -211,11 +214,16 @@
 
                 </tbody>
             </table>
-            <div class="col-12 text-right">
+        </div>
+        <div class="row justify-content-between">
+            <div class="col"></div>
+            <div class="col justify-content-right">
                 <a href="/p/write"
                     class="border border-dark rounded bg-primary text-white text-decoration-none p-1">글쓰기</a>
             </div>
-            <div class="col-12 text-center">
+        </div>
+        <div class="row">
+            <div class="col">
                 <a href="/p/notice" class="">처음</a>
                 <a href="/p/notice" class="">1</a>
                 <a href="/p/notice" class="">2</a>
@@ -229,28 +237,28 @@
                 <a href="/p/notice" class="">10</a>
                 <a href="/p/notice" class="">마지막</a>
             </div>
-
-            <!-- 검색창 부분 -->
-            <div class="col-12 text-center">
+        </div>
+        <!-- 검색창 부분 -->
+        <div class="row justify-content-between">
+            <div class="col">
                 <form class="form-inline" role=form action="" method="POST">
                     <div class="form-group">
                         <select class="form-control" name="search_scope">
                             <option value="everything">전체</option>
-                        </select>
-                        <select class="form-control" name="search_scope">
-                            <option value="everything">제목</option>
-                        </select>
-                        <select class="form-control" name="search_scope">
-                            <option value="everything">문제번호</option>
-                        </select>
-                        <select class="form-control" name="search_scope">
-                            <option value="everything">작성자</option>
+                            <option value="subject">제목</option>
+                            <option value="probelm">문제번호</option>
+                            <option value="author">작성자</option>
                         </select>
                     </div>
-                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="search_term">
+                    </div>
+                    <button type="submit" class="btn-primary">검색</button>
                 </form>
             </div>
         </div>
+        <!-- 검색창 부분 끝-->
+
         <!--테이블 부분 끝-->
     </div>
 </body>
