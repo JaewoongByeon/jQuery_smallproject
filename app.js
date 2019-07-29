@@ -8,32 +8,10 @@ app.use(express.static('public'))
 
 const path = require('path');
 const router = express.Router();
-router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
-  //__dirname : It will resolve to your project folder.
-});
-
-//JaewoongByeon -->
-router.get('/b', function (req, res) {
-    res.sendFile(path.join(__dirname + '/byeon/index.html'));
-});
-router.get('/b/signup', function (req, res) {
-    res.sendFile(path.join(__dirname + '/byeon/signup.html'));
-});
-router.get('/b/notice', function (req, res) {
-    res.sendFile(path.join(__dirname + '/byeon/notice.html'));
-});
-router.get('/b/submit', function (req, res) {
-    res.send('<br>first name : ' + req.query.firstname + '<br>surname : ' + req.query.surname + '<br>e-mail : ' + req.query.email + '<br>password : ' + req.query.pwd
-       +'<br>password confirm : ' + req.query.pwdcf + '<br>phone : ' + req.query.tel + '<br>month : ' + req.query.month + '<br>date : ' + req.query.date + '<br>year : ' + req.query.year + '<br>gender : ' + req.query.gender + '<br>agree send mail : ' + req.query.agree)
-});
-router.get('/cookie', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/bom_cookies.html'));
-});
-router.get('/login', function(req, res) {
-  res.sendFile(path.join(__dirname + '/byeon/0724/login.html'));
-});
 //////////////////////////////////////////////////
+router.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/index.html'));
+});
 router.get('/login', function(req, res) {
   res.sendFile(path.join(__dirname + '/view/login.html'));
 });
@@ -48,6 +26,9 @@ router.get('/homework/detail', function(req, res) {
 });
 router.get('/index', function(req, res) {
   res.sendFile(path.join(__dirname + '/view/index.html.html'));
+});
+router.get('/signup', function(req, res) {
+  res.sendFile(path.join(__dirname + '/view/signup.html'));
 });
 
 router.get('/view/login.html', function(req, res) {
